@@ -7,8 +7,6 @@ def parse_amount(amount):
         return float(amount)
     return float(str(amount).replace(",", ""))
 
-
-
 latest = {}
 
 with open("payments.jsonl") as f:
@@ -41,8 +39,7 @@ with open("expected.txt") as f:
     expected = int(f.read().strip())
 
 if count != expected:
-    print(f"Check failed: counted {count} successful payments, expected {expected}.")
-    print("Something in the data isn't being handled the way the README describes.")
+    print(f"check count {count} successful payments, expected {expected}.")
 else:
-    print(f"Check passed: {count} successful payments.")
-    print(f"Your code: KOYA-{round(total)}")
+    print(f"{count} successful payments.")
+    print(f"KOYA-{round(total)}")
